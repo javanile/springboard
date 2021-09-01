@@ -5,7 +5,7 @@ top:
 	@echo "ALL"
 
 homepage:
-	@while IFS= read line; do make -s append; done < projects.list
-## test
+	@while IFS= read project; do [ -n "$${project}" ] && make -s append project="$${project}" ; done < projects.list
+
 append:
-	@echo "E"
+	@echo "$${project}"
