@@ -6,4 +6,4 @@ homepage:
 	@while IFS= read line; do make -s append; done < projects.list
 ## test
 append:
-	@echo "A"
+	@echo "B"
