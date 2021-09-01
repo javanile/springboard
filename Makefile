@@ -1,4 +1,6 @@
 
+update: homepage
+
 top:
 	@echo "ALL"
 
