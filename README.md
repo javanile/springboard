@@ -2,6 +2,8 @@
 
 > Your project's first place
 
+![Makefile 100%](https://img.shields.io/badge/Makefile-100%25-green)
+
 ## Get Started
 
 To be included in the homepage of the site you just need to edit 
