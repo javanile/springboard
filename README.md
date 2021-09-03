@@ -24,7 +24,7 @@ until you reach the hundred stars.
 
 This was create usign a CSS to Image converter <https://htmlcsstoimage.com/> with the follwoing specs
 
-- Text CSS Effect from <https://codepen.io/5t3ph/pen/mdVZYpr>
+- Text CSS Effect from <https://codepen.io/5t3ph/pen/mdVZYpr> fixed [here](https://github.com/javanile/springboard/blob/main/docs/_sass/custom/custom.scss)
 - Font "Alegreya Sans 900 Italic" by <https://fonts.google.com/specimen/Alegreya+Sans+SC>
 - Backrground Gradient "Ox Eye" from <https://www.eggradients.com/category/rainbow-gradient>
 - Border radius 20px with <https://pinetools.com/round-corners-image>
