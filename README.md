@@ -1,6 +1,5 @@
 <div align="center">
 <img width="400" src="docs/images/header.png" alt="Springboard">
-![Makefile 100%](https://img.shields.io/badge/Makefile-100%25-brightgreen)
 </div>
 <hr>
 
@@ -8,7 +7,7 @@
 
 > Your project's first place
 
-
+![Makefile 100%](https://img.shields.io/badge/Makefile-100%25-brightgreen)
 
 ## Get Started
 
