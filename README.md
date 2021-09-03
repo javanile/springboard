@@ -1,3 +1,7 @@
+<div align="center">
+	<img width="400" src="docs/images/header.png" alt="Springboard">
+</div>
+
 # Springboard
 
 > Your project's first place
