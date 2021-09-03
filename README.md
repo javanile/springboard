@@ -18,7 +18,7 @@ until you reach the hundred stars.
 
 <hr>
 
-## Tl;dr
+## TL;DR
 
 ### README.md Header
 
