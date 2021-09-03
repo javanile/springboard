@@ -3,11 +3,20 @@
 </div>
 <hr>
 
-# Springboard
+# 🌈 Springboard
 
 > Your project's first place
 
 ![Makefile 100%](https://img.shields.io/badge/Makefile-100%25-brightgreen)
+
+## What is it? 
+
+Springboard is a public website that lists open-source projects collected by creators through pull-requests.
+
+## Why should I contribute?
+
+Finding users who will use your code isn't easy at all. It is even more difficult to find someone to contribute to your project. 
+Placing your project on the `projects.list` will help you get a little more visibility.
 
 ## Get Started
 
