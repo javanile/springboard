@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:ital,wght@1,900&display=swap');
+
 body > div.side-bar > footer {
   display: none;
 }
@@ -28,21 +30,14 @@ body > div.side-bar > footer {
   font-family: "Alegreya Sans SC", sans-serif;
   font-weight: 900;
   font-style: italic;
-  font-size: clamp(3rem, 15vw, 10rem);
+  font-size: clamp(3rem, 15vw, 1.8rem);
   text-transform: uppercase;
   color: var(--c5);
 }
-.sticker-sm {
-  font-size: clamp(1rem, 10vw, 6rem);
-}
 
-.sticker-md {
-  font-size: clamp(2rem, 20vw, 12rem);
-}
 .sticker-lg {
-  font-size: clamp(6rem, 30vw, 20rem);
+  font-size: clamp(1rem, 10vw, 3rem);
 }
-
 
 .sticker span {
   background: linear-gradient(var(--shine-angle), rgba(255, 0, 0, 0) 0%, rgba(255, 0, 0, 0) 35%, rgba(255, 255, 255, 0.98) 49.95%, rgba(255, 255, 255, 0.98) 50.15%, rgba(255, 0, 0, 0) 65%, rgba(255, 0, 0, 0)), linear-gradient(to right, var(--c1), var(--c2), var(--c3), var(--c4), var(--c5));
@@ -50,17 +45,21 @@ body > div.side-bar > footer {
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke: 0.01em rgba(0, 0, 0, 0.6);
 }
+
 .sticker > *, .sticker::before, .sticker::after {
   grid-area: text;
 }
+
 .sticker::before, .sticker::after {
   content: attr(data-text);
   color: #fff;
 }
+
 .sticker::before {
   -webkit-text-stroke: 0.21em white;
   background: no-repeat linear-gradient(white, white) 15% 50%/85% 60%;
 }
+
 .sticker::after {
   text-shadow: 0.07em 0.08em 0.05em rgba(0, 0, 0, 0.75), -0.07em -0.05em 0.05em rgba(0, 0, 0, 0.75);
   z-index: -2;
