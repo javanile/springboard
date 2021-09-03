@@ -4,6 +4,13 @@ body > div.side-bar > footer {
   display: none;
 }
 
+@media (min-width: 50rem) {
+  .site-title {
+    padding-top: .6rem;
+    padding-bottom: .4rem;
+  }
+}
+
 .main-content h2 a {
   color: #27262b;
   text-decoration: none;
