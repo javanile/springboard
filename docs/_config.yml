@@ -1,4 +1,8 @@
 title: Springboard
 remote_theme: pmarsceill/just-the-docs
 
+aux_links:
+  "🌈 Add Your Project":
+    - "//github.com/javanile/springboard/edit/main/projects.list"
+
 footer_content: "We ❤ ️Open Source"
