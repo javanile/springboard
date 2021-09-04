@@ -1,5 +1,5 @@
 <div align="center">
-<img width="400" src="docs/images/header.png" alt="Springboard">
+<img width="400" src="docs/assets/images/header.png" alt="Springboard">
 </div>
 <hr>
 
