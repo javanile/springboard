@@ -20,10 +20,19 @@ Placing your project on the `projects.list` will help you get a little more visi
 
 ## Get Started
 
-To be included in the homepage of the site you just need to edit 
-the [projects.list](https://github.com/javanile/springboard/edit/main/projects.list) file, create a pull-request, 
-it will be approved within an hour from that moment your project will be visible on the site 
-until you reach the hundred stars.
+1. Add your own project to [projects.list](https://github.com/javanile/springboard/edit/main/projects.list)
+1. Send us a pull request!
+
+**If you think of multiple projects, please submit them as separate PRs**, it is recommended to have separate statistics.
+
+Some other suggestions:
+
+* Be meaningful. Add projects that are even only slightly useful for carrying out a specific task.
+* Be funny. This is very subjective, we realize, so try not to take it personally if we don't get it.
+* Use actual words. Let people easily understand what they can do with your project.
+* Avoid developer profile pages, people are not products.
+* Avoid pojects that are gendered, sexual, religious, aggressive, or violent. We are a diverse, positive place.
+* Avoid using proper country and/or corporate names (except it refer to a tecnology).
 
 <hr>
 
@@ -42,3 +51,7 @@ This was create usign a CSS to Image converter with the follwoing specs
 - Font "Alegreya Sans 900 Italic" by <https://fonts.google.com/specimen/Alegreya+Sans+SC>
 - Backrground Gradient "Ox Eye" from <https://www.eggradients.com/category/rainbow-gradient>
 - Border radius 20px with <https://pinetools.com/round-corners-image>
+
+### Inspired by
+
+- <https://github.com/npm/npm-expansions>
