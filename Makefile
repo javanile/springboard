@@ -1,4 +1,6 @@
 
+REPOS := https://api.github.com/repos
+
 update: homepage
 
 top:
@@ -9,3 +11,7 @@ homepage:
 
 append:
 	@echo "$${project}"
+
+contributors:
+	@sed -n '1,8p' -i docs/contributors.md
+	@curl -s $(REPOS)/javanile/springboard/contributors | grep '"login":' | cut -d'"' -f4
