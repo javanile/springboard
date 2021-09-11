@@ -1,7 +1,7 @@
 
 MY := javanile/springboard
-REPOS := https://api.github.com/repos
-CONTRIBUTORS :=	$(shell curl -s $(REPOS)/$(MY)/contributors | grep '"login":' | cut -d'"' -f4 | sort -r)
+GH := https://api.github.com
+CONTRIBUTORS :=	$(shell curl -s $(GH)/repos/$(MY)/contributors | grep '"login":' | cut -d'"' -f4 | sort -r)
 CONTRIBUTORS_MD := docs/contributors.md
 
 update: homepage
@@ -23,5 +23,9 @@ contributors:
 
 user:
 	@echo "## $(user)"
-	@echo "<img src='https://github.com/$(user).png' width='100' height='100' alt='$(user)' />"
+	@echo "<img src='$(GH)/$(user).png' width='100' height='100' alt='$(user)' />"
+	@echo "<a href='$(GH)/$(MY)/pulls?q=is%3Apr+author%3A$(user)' target='_blank'>🗣️ Contributes</a>"
+	@echo "<a href='$(GH)/$(MY)/commits?author=$(user)' target='_blank'>🗣️ Changes</a>"
+	@echo "<a href='$(GH)/$(MY)/$(user)?tab=repositories&type=source&sort=stargazers' target='_blank'>🗣️ Repositories</a>"
+	@echo "<a href='$(GH)/pulls?q=is%3Apr+author%3A$(user)' target='_blank'>🗣️ Pull-requests</a>"
 	@echo ""
