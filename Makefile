@@ -4,9 +4,7 @@ MY := javanile/springboard
 REPOS := https://api.github.com/repos
 PROJECTS_MD := docs/index.md
 CONTRIBUTORS_MD := docs/contributors.md
-
 PROJECT_MD := docs/$(project)/index.md
-
 PROJECTS := $(shell cat projects.list | grep -E '^[a-zA-Z0-9]' | sed -e 's%^github\.com%%i')
 CONTRIBUTORS :=	$(shell curl -s $(REPOS)/$(MY)/contributors | grep '"login":' | cut -d'"' -f4 | sort -r)
 
@@ -20,10 +18,13 @@ top:
 homepage:
 	@for IFS= read project; do [ -n "$${project}" ] && make -s append project="$${project}" ; done < projects.list
 
+project-page: A = B
+project-page:
+	echo $(A)
+
 $(PROJECT_MD):
 	@mkdir -p docs/$(project)
-	curl -s $(REPOS)/$(project)
-	echo "Hello, World!" > $@
+	@make -s project-page > $@
 	@echo Page created: $(PROJECT_MD)
 
 contributors:
@@ -43,4 +44,7 @@ user:
 ## Tests
 ## -----
 test-project-page:
+	@make -s project-page project=akoskm/gitforcats
+
+test-project-md-page:
 	@make -s docs/akoskm/gitforcats/index.md project=akoskm/gitforcats
