@@ -6,7 +6,6 @@ PROJECTS_MD := docs/index.md
 CONTRIBUTORS_MD := docs/contributors.md
 PROJECT_MD := docs/$(project)/index.md
 PROJECTS := $(shell cat projects.list | grep -E '^[a-zA-Z0-9]' | sed -e 's%^github\.com%%i')
-CONTRIBUTORS :=	$(shell curl -s $(REPOS)/$(MY)/contributors | grep '"login":' | cut -d'"' -f4 | sort -r)
 
 update: homepage
 
@@ -27,6 +26,8 @@ $(PROJECT_MD):
 	@make -s project-page > $@
 	@echo Page created: $(PROJECT_MD)
 
+#
+contributors: CONTRIBUTORS = $(shell curl -s $(REPOS)/$(MY)/contributors | grep '"login":' | cut -d'"' -f4 | sort -r)
 contributors:
 	@sed -n '1,8p' -i $(CONTRIBUTORS_MD)
 	@for user in $(CONTRIBUTORS); do make -s user user=$${user} >> $(CONTRIBUTORS_MD); done
