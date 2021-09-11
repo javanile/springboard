@@ -26,13 +26,15 @@ $(PROJECT_MD):
 	@make -s project-page > $@
 	@echo Page created: $(PROJECT_MD)
 
-#
-contributors: CONTRIBUTORS = $(shell curl -s $(REPOS)/$(MY)/contributors | grep '"login":' | cut -d'"' -f4 | sort -r)
+## ------------
+## Contributors
+## ------------
+contributors: CONTRIBUTORS = $(shell curl -s $(REPOS)/$(MY)/contributors | grep '"login":' | cut -d'"' -f4 | sort -R)
 contributors:
 	@sed -n '1,8p' -i $(CONTRIBUTORS_MD)
-	@for user in $(CONTRIBUTORS); do make -s user user=$${user} >> $(CONTRIBUTORS_MD); done
+	@for user in $(CONTRIBUTORS); do make -s contributor user=$${user} >> $(CONTRIBUTORS_MD); done
 
-user:
+contributor:
 	@echo "## $(user)"
 	@echo "<img src='$(GH)/$(user).png' width='100' height='100' alt='$(user)' />"
 	@echo "<a href='$(GH)/$(MY)/pulls?q=is%3Apr+author%3A$(user)' target='_blank'>🗣️ Contributes</a>"
@@ -49,3 +51,7 @@ test-project-page:
 
 test-project-md-page:
 	@make -s docs/akoskm/gitforcats/index.md project=akoskm/gitforcats
+
+test-contributors:
+	@make -s contributors
+	@cat $(CONTRIBUTORS_MD)
