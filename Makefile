@@ -5,9 +5,9 @@ REPOS := https://api.github.com/repos
 PROJECTS_MD := docs/index.md
 CONTRIBUTORS_MD := docs/contributors.md
 
-PROJECT_MD := docs/$(project)
+PROJECT_MD := docs/$(project)/index.md
 
-PROJECTS := $(shell cat projects.list | grep -E '^[a-zA-Z0-9]' | sed -e 's#^github\.com/##i')
+PROJECTS := $(shell cat projects.list | grep -E '^[a-zA-Z0-9]' | sed -e 's%^github\.com%%i')
 CONTRIBUTORS :=	$(shell curl -s $(REPOS)/$(MY)/contributors | grep '"login":' | cut -d'"' -f4 | sort -r)
 
 update: homepage
@@ -20,9 +20,11 @@ top:
 homepage:
 	@for IFS= read project; do [ -n "$${project}" ] && make -s append project="$${project}" ; done < projects.list
 
-project:
-	$(project)/index
-	[]
+$(PROJECT_MD):
+	@mkdir -p docs/$(project)
+	curl -s $(REPOS)/$(project)
+	echo "Hello, World!" > $@
+	@echo Page created: $(PROJECT_MD)
 
 contributors:
 	@sed -n '1,8p' -i $(CONTRIBUTORS_MD)
@@ -36,3 +38,9 @@ user:
 	@echo "<a href='$(GH)/$(MY)/$(user)?tab=repositories&type=source&sort=stargazers' target='_blank'>🗣️ Repositories</a>"
 	@echo "<a href='$(GH)/pulls?q=is%3Apr+author%3A$(user)' target='_blank'>🗣️ Pull-requests</a>"
 	@echo ""
+
+## -----
+## Tests
+## -----
+test-project-page:
+	@make -s docs/akoskm/gitforcats/index.md project=akoskm/gitforcats
