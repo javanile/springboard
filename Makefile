@@ -1,8 +1,14 @@
 
+GH := https://github.com
 MY := javanile/springboard
-GH := https://api.github.com
-CONTRIBUTORS :=	$(shell curl -s $(GH)/repos/$(MY)/contributors | grep '"login":' | cut -d'"' -f4 | sort -r)
+REPOS := https://api.github.com/repos
+PROJECTS_MD := docs/index.md
 CONTRIBUTORS_MD := docs/contributors.md
+
+PROJECT_MD := docs/$(project)
+
+PROJECTS := $(shell cat projects.list | grep -E '^[a-zA-Z0-9]' | sed -e 's#^github\.com/##i')
+CONTRIBUTORS :=	$(shell curl -s $(REPOS)/$(MY)/contributors | grep '"login":' | cut -d'"' -f4 | sort -r)
 
 update: homepage
 
@@ -12,10 +18,11 @@ top:
 	@echo "ALL"
 
 homepage:
-	@while IFS= read project; do [ -n "$${project}" ] && make -s append project="$${project}" ; done < projects.list
+	@for IFS= read project; do [ -n "$${project}" ] && make -s append project="$${project}" ; done < projects.list
 
-append:
-	@echo "$${project}"
+project:
+	$(project)/index
+	[]
 
 contributors:
 	@sed -n '1,8p' -i $(CONTRIBUTORS_MD)
