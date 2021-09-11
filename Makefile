@@ -7,6 +7,9 @@ CONTRIBUTORS_MD := docs/contributors.md
 PROJECT_MD := docs/$(project)/index.md
 PROJECTS := $(shell cat projects.list | grep -E '^[a-zA-Z0-9]' | sed -e 's%^github\.com%%i')
 
+## ----------
+## Operations
+## ----------
 update: homepage
 
 docs: homepage
@@ -16,6 +19,11 @@ top:
 
 homepage:
 	@for IFS= read project; do [ -n "$${project}" ] && make -s append project="$${project}" ; done < projects.list
+
+## --------
+## Projects
+## --------
+projects:
 
 project-page: A = B
 project-page:
@@ -29,10 +37,10 @@ $(PROJECT_MD):
 ## ------------
 ## Contributors
 ## ------------
-contributors: CONTRIBUTORS = $(shell curl -s $(REPOS)/$(MY)/contributors | grep '"login":' | cut -d'"' -f4 | sort -R)
+contributors: contributors = $(shell curl -s $(REPOS)/$(MY)/contributors | grep '"login":' | cut -d'"' -f4 | sort -R)
 contributors:
-	@sed -n '1,8p' -i $(CONTRIBUTORS_MD)
-	@for user in $(CONTRIBUTORS); do make -s contributor user=$${user} >> $(CONTRIBUTORS_MD); done
+	@sed -n '1,7p' -i $(CONTRIBUTORS_MD)
+	@for user in $(contributors); do make -s contributor user=$${user} >> $(CONTRIBUTORS_MD); done
 
 contributor:
 	@echo "## $(user)"
