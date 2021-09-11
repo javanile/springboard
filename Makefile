@@ -5,11 +5,11 @@ REPOS := https://api.github.com/repos
 PROJECTS_MD := docs/index.md
 CONTRIBUTORS_MD := docs/contributors.md
 PROJECT_MD := docs/$(project)/index.md
-PROJECTS := $(shell cat projects.list | grep -E '^[a-zA-Z0-9]' | sed -e 's%^github\.com%%i')
+PROJECTS :
 
-## ----------
-## Operations
-## ----------
+## -------
+## Actions
+## -------
 update: homepage
 
 docs: homepage
@@ -17,22 +17,32 @@ docs: homepage
 top:
 	@echo "ALL"
 
-homepage:
-	@for IFS= read project; do [ -n "$${project}" ] && make -s append project="$${project}" ; done < projects.list
 
 ## --------
 ## Projects
 ## --------
+projects: projects = $(shell cat projects.list | grep -E '^[a-zA-Z0-9]' | sed -e 's%^github\.com/%%i')
 projects:
+	@for project in $(projects); do make -s project-page project=$${project}; done
+	@#for IFS= read project; do [ -n "$${project}" ] && make -s append project="$${project}" ; done < projects.list
 
-project-page: A = B
 project-page:
-	echo $(A)
+	@make -s $(PROJECT_MD) project=$(project)
 
 $(PROJECT_MD):
 	@mkdir -p docs/$(project)
-	@make -s project-page > $@
-	@echo Page created: $(PROJECT_MD)
+	@make -s generate-project-page > $@
+	@echo Created page: $(PROJECT_MD)
+
+generate-project-page: A = B
+generate-project-page:
+	@echo "## $(user)"
+	@echo "<img src='$(GH)/$(user).png' width='100' height='100' alt='$(user)' />"
+	@echo "<a href='$(GH)/$(MY)/pulls?q=is%3Apr+author%3A$(user)' target='_blank'>🗣️ Contributes</a>"
+	@echo "<a href='$(GH)/$(MY)/commits?author=$(user)' target='_blank'>🗣️ Changes</a>"
+	@echo "<a href='$(GH)/$(MY)/$(user)?tab=repositories&type=source&sort=stargazers' target='_blank'>🗣️ Repositories</a>"
+	@echo "<a href='$(GH)/pulls?q=is%3Apr+author%3A$(user)' target='_blank'>🗣️ Pull-requests</a>"
+	@echo ""
 
 ## ------------
 ## Contributors
