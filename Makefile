@@ -48,22 +48,26 @@ generate-project-page:
 ## ------------
 contributors: contributors = $(shell curl -s $(REPOS)/$(MY)/contributors | grep '"login":' | cut -d'"' -f4 | sort -R)
 contributors:
+	@> .rank
 	@sed -n '1,7p' -i $(CONTRIBUTORS_MD)
-	@for user in $(contributors); do make -s contributor-score user=$${user}; done
-	#@for user in $(contributors); do make -s contributor user=$${user} >> $(CONTRIBUTORS_MD); done
+	@echo "| Front-end 😎 | Username | Score |" >> $(CONTRIBUTORS_MD)
+	@echo "|:------------:|:---------|:-----:|" >> $(CONTRIBUTORS_MD)
+	@for user in $(contributors); do make -s contributor-score user=$${user} >> .rank; done
+	@for rank in $$(sort -rnt, .rank); do make -s contributor rank=$${rank} >> $(CONTRIBUTORS_MD); done
+	@rm .rank
 
 contributor-score: score = $(shell grep -o '$(user)' projects.list | wc -l)
 contributor-score:
-	@echo $(score) $(user)
+	@echo "$(score),$(user)"
 
 contributor:
-	@echo "## $(user)"
-	@echo "<img src='$(GH)/$(user).png' width='100' height='100' alt='$(user)' />"
-	@echo "<a href='$(GH)/$(MY)/pulls?q=is%3Apr+author%3A$(user)' target='_blank'>🗣️ Contributes</a>"
-	@echo "<a href='$(GH)/$(MY)/commits?author=$(user)' target='_blank'>🗣️ Changes</a>"
-	@echo "<a href='$(GH)/$(MY)/$(user)?tab=repositories&type=source&sort=stargazers' target='_blank'>🗣️ Repositories</a>"
-	@echo "<a href='$(GH)/pulls?q=is%3Apr+author%3A$(user)' target='_blank'>🗣️ Pull-requests</a>"
-	@echo ""
+	@echo -n "| <img src='$(GH)/$${rank##*,}.png' width='32' height='32' alt='$${rank##*,}' />"
+	@echo -n "| $${rank##*,} "
+	@echo -n "| $${rank%%,*} "
+	#@echo "<a href='$(GH)/$(MY)/commits?author=$(user)' target='_blank'>🗣️ Changes</a>"
+	#@echo "<a href='$(GH)/$(MY)/$(user)?tab=repositories&type=source&sort=stargazers' target='_blank'>🗣️ Repositories</a>"
+	#@echo "<a href='$(GH)/pulls?q=is%3Apr+author%3A$(user)' target='_blank'>🗣️ Pull-requests</a>"
+	@echo "|"
 
 ## -----
 ## Tests
@@ -74,6 +78,12 @@ test-project-page:
 test-project-md-page:
 	@make -s docs/akoskm/gitforcats/index.md project=akoskm/gitforcats
 
+test-contributor:
+	@make -s contributor rank=255,samsepiol
+
 test-contributors:
 	@make -s contributors
 	@cat $(CONTRIBUTORS_MD)
+
+test-a:
+	echo $${rank##*,}
