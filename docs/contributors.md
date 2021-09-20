@@ -5,6 +5,34 @@ nav_order: 2
 has_children: false
 ---
 
+<details>
+  <summary>federico-terzi - <a class="github-button" href="https://github.com/sponsors/ntkme" data-icon="octicon-heart" aria-label="Sponsor @ntkme on GitHub">Sponsor</a></summary>
+  <table>
+    <tr>
+      <td><img src='https://github.com/federico-terzi.png' width='32' height='32' alt='federico-terzi' /></td>
+    </tr>
+  </table>
+</details>
+<details>
+  <summary>federico-terzi - <a class="github-button" href="https://github.com/sponsors/ntkme" data-icon="octicon-heart" aria-label="Sponsor @ntkme on GitHub">Sponsor</a></summary>
+  <img src='https://github.com/federico-terzi.png' width='32' height='32' alt='federico-terzi' />
+</details>
+<details>
+  <summary>federico-terzi - <a class="github-button" href="https://github.com/sponsors/ntkme" data-icon="octicon-heart" aria-label="Sponsor @ntkme on GitHub">Sponsor</a></summary>
+  <img src='https://github.com/federico-terzi.png' width='32' height='32' alt='federico-terzi' />
+</details>
+<details>
+  <summary>federico-terzi - <a class="github-button" href="https://github.com/sponsors/ntkme" data-icon="octicon-heart" aria-label="Sponsor @ntkme on GitHub">Sponsor</a></summary>
+  <img src='https://github.com/federico-terzi.png' width='32' height='32' alt='federico-terzi' />
+</details>
+
+
+### <img src='https://github.com/pgrimaud.png' width='32' height='32' alt='pgrimaud' /> pgrimaud 
+
+### <img src='https://github.com/TomislavKraljic.png' width='32' height='32' alt='TomislavKraljic' />  TomislavKraljic
+
+
+
 ## federico-terzi
 <img src='https://github.com/federico-terzi.png' width='100' height='100' alt='federico-terzi' />
 <a href='https://github.com/javanile/springboard/pulls?q=is%3Apr+author%3Afederico-terzi' target='_blank'>🗣️ Contributes</a>
