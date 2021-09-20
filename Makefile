@@ -50,7 +50,7 @@ contributors: contributors = $(shell curl -s $(REPOS)/$(MY)/contributors | grep 
 contributors:
 	@> .rank
 	@sed -n '1,7p' -i $(CONTRIBUTORS_MD)
-	@echo "| Front-end 😎 | Username | Score |" >> $(CONTRIBUTORS_MD)
+	@echo "| Front-end 😎 | Nickname | Score |" >> $(CONTRIBUTORS_MD)
 	@echo "|:------------:|:---------|:-----:|" >> $(CONTRIBUTORS_MD)
 	@for user in $(contributors); do make -s contributor-score user=$${user} >> .rank; done
 	@for rank in $$(sort -rnt, .rank); do make -s contributor rank=$${rank} >> $(CONTRIBUTORS_MD); done
