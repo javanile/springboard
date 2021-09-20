@@ -49,7 +49,12 @@ generate-project-page:
 contributors: contributors = $(shell curl -s $(REPOS)/$(MY)/contributors | grep '"login":' | cut -d'"' -f4 | sort -R)
 contributors:
 	@sed -n '1,7p' -i $(CONTRIBUTORS_MD)
-	@for user in $(contributors); do make -s contributor user=$${user} >> $(CONTRIBUTORS_MD); done
+	@for user in $(contributors); do make -s contributor-score user=$${user}; done
+	#@for user in $(contributors); do make -s contributor user=$${user} >> $(CONTRIBUTORS_MD); done
+
+contributor-score: score = $(shell grep -o '$(user)' projects.list | wc -l)
+contributor-score:
+	@echo $(score) $(user)
 
 contributor:
 	@echo "## $(user)"
