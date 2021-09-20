@@ -61,7 +61,7 @@ contributor-score:
 	@echo "$(score),$(user)"
 
 contributor:
-	@echo -n "| <img src='$(GH)/$${rank##*,}.png' width='32' height='32' alt='$${rank##*,}' />"
+	@echo -n "| <img src='$(GH)/$${rank##*,}.png' width='64' height='64' alt='$${rank##*,}' />"
 	@echo -n "| $${rank##*,} "
 	@echo -n "| $${rank%%,*} "
 	#@echo "<a href='$(GH)/$(MY)/commits?author=$(user)' target='_blank'>🗣️ Changes</a>"
