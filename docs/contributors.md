@@ -5,8 +5,8 @@ nav_order: 2
 has_children: false
 ---
 
-
-|:-------------|:------------------|:------|
+|   |   |   |
+|---|---|---|
 | <img src='https://github.com/federico-terzi.png' width='100' height='100' alt='federico-terzi' /> | federico-terzi | - |
 | <img src='https://github.com/pgrimaud.png' width='100' height='100' alt='pgrimaud' /> | pgrimaud   | -  |
 | <img src='https://github.com/TomislavKraljic.png' width='100' height='100' alt='TomislavKraljic' /> | TomislavKraljic | -   |
