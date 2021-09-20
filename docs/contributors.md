@@ -7,10 +7,11 @@ has_children: false
 
 <details>
   <summary>federico-terzi - <a class="github-button" href="https://github.com/sponsors/ntkme" data-icon="octicon-heart" aria-label="Sponsor @ntkme on GitHub">Sponsor</a></summary>
-|   |   |
-|---|---|
-| a | b |
-  <img src='https://github.com/federico-terzi.png' width='32' height='32' alt='federico-terzi' />
+  <table>
+    <tr>
+      <td><img src='https://github.com/federico-terzi.png' width='32' height='32' alt='federico-terzi' /></td>
+    </tr>
+  </table>
 </details>
 <details>
   <summary>federico-terzi - <a class="github-button" href="https://github.com/sponsors/ntkme" data-icon="octicon-heart" aria-label="Sponsor @ntkme on GitHub">Sponsor</a></summary>
