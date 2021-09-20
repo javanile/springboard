@@ -5,7 +5,6 @@ REPOS := https://api.github.com/repos
 PROJECTS_MD := docs/index.md
 CONTRIBUTORS_MD := docs/contributors.md
 PROJECT_MD := docs/$(project)/index.md
-PROJECTS :
 
 ## -------
 ## Actions
