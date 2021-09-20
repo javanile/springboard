@@ -5,11 +5,9 @@ nav_order: 2
 has_children: false
 ---
 
-|   |   |   |
-|---|---|---|
-| <img src='https://github.com/federico-terzi.png' width='64' height='64' alt='federico-terzi' /> | federico-terzi | - |
-| <img src='https://github.com/pgrimaud.png' width='64' height='64' alt='pgrimaud' /> | pgrimaud   | -  |
-| <img src='https://github.com/TomislavKraljic.png' width='64' height='64' alt='TomislavKraljic' /> | TomislavKraljic | -   |
+### <img src='https://github.com/federico-terzi.png' width='32' height='32' alt='federico-terzi' /> federico-terzi 
+### <img src='https://github.com/pgrimaud.png' width='32' height='32' alt='pgrimaud' /> pgrimaud 
+### <img src='https://github.com/TomislavKraljic.png' width='32' height='32' alt='TomislavKraljic' />  TomislavKraljic
 
 
 
